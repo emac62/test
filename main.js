@@ -2,7 +2,7 @@ const url = 'https://script.google.com/macros/s/AKfycbxalPGjmVJzn33FTkHW5l40HXWR
 
 const apiKey = 'AIzaSyCuO016qB5uToWhGOeJhFQ_t-RAnjasAtA'
 
-//getData();
+getData();
 
 function getData() {
   fetch(url).then((res) => {

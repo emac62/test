@@ -179,6 +179,7 @@ getvals().then(response => setQuote(response));
 
 function setQuote(response) {
 
+  let spinner = document.getElementById('spin')
   today = response.data.filter(obj => obj.id == currentQuote)
   todayQuote = today[0]['quote']
   todayQuote = todayQuote.toUpperCase()
@@ -363,9 +364,14 @@ function setQuote(response) {
 
     }
   }
+  let board = document.getElementById("game-board")
+  function fadeOutIn() {
 
+    spinner.classList.add("invisible")
+    initBoard()
+  }
 
-  initBoard()
+  fadeOutIn()
 
   let blockQuote = document.getElementById('blockquote')
   blockQuote.innerHTML = todayQuote + "."

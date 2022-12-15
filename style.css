@@ -54,18 +54,19 @@ h3 {
 }
 
 .title {
-  padding-top: 2px;
+  padding: 8px 0 0 100px;
   flex-grow: 2;
-  justify-content: center;
+  text-align: center;
+  /* justify-content: center; */
 }
 
-.nav-left {
+/* .nav-left {
   justify-content: start;
 }
 
 .nav-right {
   justify-content: end;
-}
+} */
 
 button.linkBtn,
 a.backBtn {
@@ -75,11 +76,42 @@ a.backBtn {
   border: 2px solid transparent;
   color: #F5F4F4;
   text-decoration: none;
+}
 
+
+
+.dropdown-toggle::after {
+  color: #F5F4F4;
+}
+
+.dropdown-menu {
+
+  background-color: #182835;
+  color: #F5F4F4;
+  border: 1px solid #F5F4F4;
+}
+
+
+
+li>button {
+  margin: 2px 5px;
+  padding: 1px 6px;
+  width: 100%;
+}
+
+li>button>img {
+  height: 18px;
+  vertical-align: middle;
+  padding-bottom: 4px;
+}
+
+li>button>span {
+  vertical-align: bottom;
 }
 
 a.linkBtn {
   vertical-align: middle;
+  text-align: left;
   padding: 5px;
   background-color: #75ADAF;
   border: 2px solid #182835;
@@ -102,7 +134,7 @@ a.backBtn:hover {
   border-radius: 3px;
 }
 
-.linkBtn img {
+.nav-img {
   height: 25px;
 }
 
@@ -215,6 +247,11 @@ a.backBtn:hover {
 
 }
 
+.enter {
+  width: fit-content;
+  padding: 0 5px;
+}
+
 .wideBtn {
   width: 3.5rem;
 }
@@ -224,11 +261,6 @@ a.backBtn:hover {
   height: auto;
   padding: 0.5rem;
   margin: 0.5rem auto;
-}
-
-#enter,
-#ENTER {
-  width: 5rem;
 }
 
 .guesses {
@@ -601,14 +633,27 @@ p.quote-context {
   }
 
   .wideBtn {
-    width: 3rem;
+    width: 2.5rem;
   }
 
   .spaceBtn {
-    width: 15rem;
+    width: fit-content;
   }
 
   .guesses {
+    font-size: 0.75;
+  }
+
+  .enter,
+  .delete,
+  .guesses,
+  .pts {
     font-size: smaller;
   }
+
+  .enter {
+    width: fit-content;
+    padding: 0 5px;
+  }
+
 }

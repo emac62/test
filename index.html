@@ -42,7 +42,9 @@
 
     <nav class="navbar">
       <div class="container-fluid">
-        <ul class="navbar-nav nav-left">
+
+
+        <!-- <ul class="navbar-nav nav-left">
           <li class="nav-item">
             <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#infoModal"
               aria-label="Information"><img src="img/InfoIcon.png" alt="Site Information Icon"></button>
@@ -51,11 +53,36 @@
             <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#aboutModal"
               aria-label="About"><img src="img/AboutIcon.png" alt="About this Site Icon"></button>
           </li>
-        </ul>
+        </ul> -->
         <div class="navbar-nav title">
           <h3 class="navbar-brand">Daily Quote</h3>
         </div>
-        <ul class="navbar-nav nav-right">
+        <div class="dropdown">
+          <button class=" linkBtn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img class="nav-img" src="img/MoreIcon.png" alt="More Information Icon">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+            <li><button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                <img src="img/AboutIcon.png" alt="About this Site Icon"> <span>About</span>
+              </button></li>
+            <li><button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#infoModal">
+                <img src="img/InfoIcon.png" alt="Site Information Icon"> <span>How to Play</span>
+              </button></li>
+            <li><button type="button" class="linkBtn">
+                <img src="" alt=""> <span>Practice</span>
+              </button></li>
+            <li><button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                <img src="img/SettingsIcon.png" alt="Settings Icon"> <span>Settings</span>
+              </button></li>
+            <li><button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#statsModal">
+                <img src="img/StatsIcon.png" alt="Statistics Icon">
+                <span>Stats</span>
+              </button></li>
+
+          </ul>
+        </div>
+        <!-- <ul class="navbar-nav nav-right">
           <li class="nav-link">
             <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#statsModal"
               aria-label="Statistics"><img src="img/StatsIcon.png" alt="Statistics Icon"></button>
@@ -64,7 +91,7 @@
             <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#settingsModal"
               aria-label="Settings"><img src="img/SettingsIcon.png" alt="Settings Icon"></button>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
 
@@ -388,64 +415,68 @@
     <div class="game-board-container">
 
       <div id="game-board">
+        <div class="spinner-border" id="spin" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
     </div>
-    <div class="row align-items-center py-2">
-      <div class="col" id="count">
-        <h6 class="guesses text-center">Letters Used: <span id="guessCount">0</span>/10</h6>
-      </div>
-      <div class="col text-center">
-        <button class="keyboard-button wideBtn" id="themeExitBtn"></button>
-      </div>
-      <div class="col">
-        <button class="keyboard-button" id="solveBtn">Guess the Quote</button>
-      </div>
+  </div>
+  <div class="row align-items-center py-2">
+    <div class="col" id="count">
+      <h6 class="guesses text-center">Letters Used: <span id="guessCount">0</span>/10</h6>
     </div>
-    <div class="pts pt-1 text-center">
-      <h6>POINTS: <span id="runningPts"> 0</span> </h6>
+    <div class="col text-center">
+      <button class="keyboard-button wideBtn" id="themeExitBtn"></button>
+    </div>
+    <div class="col">
+      <button class="keyboard-button" id="solveBtn">Guess the Quote</button>
+    </div>
+  </div>
+  <div class="pts pt-1 text-center">
+    <h6>POINTS: <span id="runningPts"> 0</span> </h6>
 
+  </div>
+  <div id="keyboard-cont">
+    <div class="first-row">
+      <button class="keyboard-button" id="Q">Q</button>
+      <button class="keyboard-button" id="W">W</button>
+      <button class="keyboard-button" id="E">E</button>
+      <button class="keyboard-button" id="R">R</button>
+      <button class="keyboard-button" id="T">T</button>
+      <button class="keyboard-button" id="Y">Y</button>
+      <button class="keyboard-button" id="U">U</button>
+      <button class="keyboard-button" id="I">I</button>
+      <button class="keyboard-button" id="O">O</button>
+      <button class="keyboard-button" id="P">P</button>
+      <button class="delete wideBtn" id="DEL">DEL</button>
     </div>
-    <div id="keyboard-cont">
-      <div class="first-row">
-        <button class="keyboard-button" id="Q">Q</button>
-        <button class="keyboard-button" id="W">W</button>
-        <button class="keyboard-button" id="E">E</button>
-        <button class="keyboard-button" id="R">R</button>
-        <button class="keyboard-button" id="T">T</button>
-        <button class="keyboard-button" id="Y">Y</button>
-        <button class="keyboard-button" id="U">U</button>
-        <button class="keyboard-button" id="I">I</button>
-        <button class="keyboard-button" id="O">O</button>
-        <button class="keyboard-button" id="P">P</button>
-        <button class="delete wideBtn" id="DEL">DEL</button>
-      </div>
-      <div class="second-row" id="">
-        <button class="keyboard-button" id="A">A</button>
-        <button class="keyboard-button" id="S">S</button>
-        <button class="keyboard-button" id="D">D</button>
-        <button class="keyboard-button" id="F">F</button>
-        <button class="keyboard-button" id="G">G</button>
-        <button class="keyboard-button" id="H">H</button>
-        <button class="keyboard-button" id="J">J</button>
-        <button class="keyboard-button" id="K">K</button>
-        <button class="keyboard-button" id="L">L</button>
-        <button class="keyboard-button" id="'">'</button>
-      </div>
-      <div class="third-row" id="">
-        <button class="keyboard-button" id="Z">Z</button>
-        <button class="keyboard-button" id="X">X</button>
-        <button class="keyboard-button" id="C">C</button>
-        <button class="keyboard-button" id="V">V</button>
-        <button class="keyboard-button" id="B">B</button>
-        <button class="keyboard-button" id="N">N</button>
-        <button class="keyboard-button" id="M">M</button>
-        <button class="keyboard-button" id=",">,</button>
-        <button class="enter" id="ENTER">ENTER</button>
-      </div>
-      <div class="fourth-row" id="">
-        <button class="keyboard-button spaceBtn" id="space">SHOW SPACES BETWEEN WORDS</button>
-      </div>
+    <div class="second-row" id="">
+      <button class="keyboard-button" id="A">A</button>
+      <button class="keyboard-button" id="S">S</button>
+      <button class="keyboard-button" id="D">D</button>
+      <button class="keyboard-button" id="F">F</button>
+      <button class="keyboard-button" id="G">G</button>
+      <button class="keyboard-button" id="H">H</button>
+      <button class="keyboard-button" id="J">J</button>
+      <button class="keyboard-button" id="K">K</button>
+      <button class="keyboard-button" id="L">L</button>
+      <button class="keyboard-button" id="'">'</button>
     </div>
+    <div class="third-row" id="">
+      <button class="keyboard-button" id="Z">Z</button>
+      <button class="keyboard-button" id="X">X</button>
+      <button class="keyboard-button" id="C">C</button>
+      <button class="keyboard-button" id="V">V</button>
+      <button class="keyboard-button" id="B">B</button>
+      <button class="keyboard-button" id="N">N</button>
+      <button class="keyboard-button" id="M">M</button>
+      <button class="keyboard-button" id=",">,</button>
+      <button class="enter" id="ENTER">ENTER</button>
+    </div>
+    <div class="fourth-row" id="">
+      <button class="keyboard-button spaceBtn" id="space">SHOW SPACES BETWEEN WORDS</button>
+    </div>
+  </div>
 
   </div>
 
